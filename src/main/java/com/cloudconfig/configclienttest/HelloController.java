@@ -6,6 +6,7 @@
 package com.cloudconfig.configclienttest;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,7 +15,9 @@ import org.springframework.web.bind.annotation.RestController;
  * @author Jayang
  */
 @RestController
+@RefreshScope
 class HelloController {
+
     @Value("${neo.hello}")
     private String hello;
 
